@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="eu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erregistratu</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Erregistratu Txirrundularitza Webgunean</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Hasiera</a></li>
+            <li><a href="#">Gure Buruz</a></li>
+            <li><a href="#">Zerbitzuak</a></li>
+            <li><a href="#">Kontaktua</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2>Erregistratu</h2>
+        <form action="register.php" method="post">
+            <label for="firstname">Izena:</label><br>
+            <input type="text" id="firstname" name="firstname" required><br>
+            <label for="lastname">Abizena:</label><br>
+            <input type="text" id="lastname" name="lastname" required><br>
+            <label for="email">Emaila:</label><br>
+            <input type="email" id="email" name="email" required><br>
+            <label for="password">Pasahitza:</label><br>
+            <input type="password" id="password" name="password" required><br><br>
+            <input type="submit" value="Erregistratu">
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2024 Txirrundularitza Taldea</p>
+    </footer>
+</body>
+</html>

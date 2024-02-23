@@ -1,5 +1,28 @@
-version: '3.7'
+version: '3'
 services:
+  mysql:
+    image: mysql:latest
+    
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: javaApi
+      MYSQL_USER: javaApi
+      MYSQL_PASSWORD: javaApi
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "8080:80"
+    environment:
+      PMA_HOST: mysql
+      MYSQL_ROOT_PASSWORD: root
+  java:
+    build: .
+    ports:
+      - "6969:6969"
+    depends_on:
+      - mysql
   web:
     image: nginx:alpine
     ports:
@@ -13,19 +36,3 @@ services:
     volumes:
       - ./:/var/www/html
       - ./docker/php/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
-  mysql:
-    image: mysql:latest
-    ports:
-      - "3306:3306"
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: webapp
-      MYSQL_USER: webapp
-      MYSQL_PASSWORD: root
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin
-    ports:
-      - "8080:80"
-    environment:
-      PMA_HOST: mysql
-      MYSQL_ROOT_PASSWORD: root

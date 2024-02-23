@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saioa hasi</title>
+    <link rel="stylesheet" href="saioa.css">
+</head>
+<body>
+    <button onclick="document.getElementById('id01').style.display='block'">Kontua Sortu</button>
+
+
+<div id="id01" class="modal">
+  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal"></span>
+  <form class="modal-content" action="/action_page.php">
+    <div class="container">
+      <h1>Kontua Sortu</h1>
+      <p>Mesedez hau osatu saioa hasteko</p>
+      <hr>
+      <label for="name"><b>Izena</b></label>
+      <input type="text" placeholder="Sartu zure izena" name="name">
+
+      <label for="surname"><b>Abizena</b></label>
+      <input type="text" placeholder="Sartu zure abizena" name="surname">
+
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Sartu Email-a" name="email" required>
+
+      <label for="psw"><b>Pasahitza</b></label>
+      <input type="password" placeholder="Sartu Pasahitza" name="psw" required>
+
+    
+
+      <label>
+        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Gogoratu arazi
+      </label>
+
+      <p>Kontua sortuz onartzen dituzu gure <a href="#" style="color:dodgerblue">Baldintzak & Pribatutasuna</a>.</p>
+
+      <div class="clearfix">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Kanzelatu</button>
+        <button type="submit" class="signup">Saioa hasi</button>
+      </div>
+    </div>
+  </form>
+  <script>
+    
+    var modal = document.getElementById('id01');
+    
+    // Kampoan click egiterakoan irten
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    </script>
+</div>
+</body>
+</html>
